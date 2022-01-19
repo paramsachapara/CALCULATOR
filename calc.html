@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" type="text/css" href="C:\Users\PARAM\Desktop\my project\Calculator\calc.css">
+	<title>calculator</title>
+	
+</head>
+<body>
+	<div class="container">
+		<div class="calculator">
+			<input type="text" placeholder="0" id="output-screen">
+			<button onclick="Clear()"> clear</button>
+			<button onclick="Del()"> delete</button>
+			<button onclick="Display('/')"> /</button>
+			<button onclick="Display('%')"> %</button>
+			<button onclick="Display('7')"> 7</button>
+			<button onclick="Display('8')"> 8</button>
+			<button onclick="Display('9')"> 9</button>
+			<button onclick="Display('*')"> *</button>
+			<button onclick="Display('4')"> 4</button>
+			<button onclick="Display('5')"> 5</button>
+			<button onclick="Display('6')"> 6</button>
+			<button onclick="Display('-')"> -</button>
+			<button onclick="Display('1')"> 1</button>
+			<button onclick="Display('2')"> 2</button>
+			<button onclick="Display('3')"> 3</button>
+			<button onclick="Display('+')"> +</button>
+			<button onclick="Display('.')"> .</button>
+			<button onclick="Display('0')"> 0</button>
+			<button onclick="Calculate()" id="equal"> = </button>
+
+		</div>
+	</div>
+	<script type="text/javascript">
+		let OutputScreen = document.getElementById("output-screen");
+		function Display(num)
+		{
+			OutputScreen.value += num;
+		}
+		function Calculate()
+		{
+			try
+			{
+				OutputScreen.value = eval(OutputScreen.value);
+			}
+			catch(err)
+			{
+				alert('invalid input');
+			}
+		}
+		function Clear()
+		{
+			OutputScreen.value = "";
+		}
+		function Del()
+		{
+			OutputScreen.value = OutputScreen.value.slice(0,-1);
+		}
+		
+
+		
+
+
+
+	</script>
+</body>
+</html>
